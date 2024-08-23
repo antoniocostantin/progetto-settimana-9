@@ -29,6 +29,9 @@ class Search extends Component {
                     this.setState({
                       search: e.target.value,
                     });
+                    if (e.target.value === ''){
+                        this.setState({start: false,})
+                    }
                   }}
                   value={this.state.search}
                 />
