@@ -9,6 +9,7 @@ import TvShows from "./components/TvShows.jsx";
 import Saga from "./components/Saga.jsx";
 import Settings from "./components/Settings.jsx";
 import ProfileSettings from "./components/ProfileSettings.jsx";
+import Search from "./components/Search.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Container fluid className="bg-dark text-light">
           <TvShows />
+          <Search/>
           <Saga saga={"Harry potter"} />
           <Saga saga={"Shrek"} />
           <Saga saga={"Lord of ring"} />
