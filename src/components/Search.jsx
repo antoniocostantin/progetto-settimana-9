@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, InputGroup, Row, Col } from "react-bootstrap";
 import Saga from "./Saga";
 
 class Search extends Component {
@@ -9,28 +9,38 @@ class Search extends Component {
   };
   render() {
     return (
-      <div className="my-4">
-        <Form onSubmit={(e) => {
-              e.preventDefault();
-              this.setState({
-                start: true,
-              });
-            }}>
-          <Form.Control
-            type="text"
-            placeholder="Search film"
-            onChange={(e) => {
-              this.setState({
-                search: e.target.value,
-              });
-            }}
-            value={this.state.search}
-            
-          />
-          <Button type="submit" variant="info" className="my-3">Submit</Button>
-        </Form>
+      <>
+        <Row className="justify-content-center">
+          <Col xs={12} md={6}>
+            {" "}
+            <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+                this.setState({
+                  start: true,
+                });
+              }}
+            >
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  placeholder="Search film"
+                  onChange={(e) => {
+                    this.setState({
+                      search: e.target.value,
+                    });
+                  }}
+                  value={this.state.search}
+                />
+                <Button type="submit" variant="outline-secondary">
+                  Submit
+                </Button>
+              </InputGroup>
+            </Form>
+          </Col>
+        </Row>
         {this.state.start && <Saga saga={this.state.search} />}
-      </div>
+      </>
     );
   }
 }

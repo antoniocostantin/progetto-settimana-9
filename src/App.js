@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import TvShows from "./components/TvShows.jsx";
 import Saga from "./components/Saga.jsx";
 import Settings from "./components/Settings.jsx";
