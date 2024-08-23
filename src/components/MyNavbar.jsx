@@ -1,16 +1,17 @@
 import { Component } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import netflixlogo from "../assets/img/netflix_logo.png";
+import avatar from '../assets/img/avatar.png'
 
 class MyNavbar extends Component {
   render() {
     return (
         <nav
-        className="navbar navbar-expand-lg bg-black"
+        className="navbar navbar-expand-lg bg-dark"
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          Name<a className="navbar-brand" href="#"
+          <a className="navbar-brand" href="#"
             ><img src={netflixlogo} className="netflixlogo"
           /></a>
           <button
@@ -46,7 +47,7 @@ class MyNavbar extends Component {
               <i className="bi bi-search icons mx-2"></i>
               <div id="kids" className="fw-bold mx-2">KIDS</div>
               <i className="bi bi-bell icons mx-2"></i>
-              <i className="bi bi-person-circle icons mx-2"></i>
+              <img src={avatar} className="avatar mx-2"/>
             </div>
           </div>
         </div>

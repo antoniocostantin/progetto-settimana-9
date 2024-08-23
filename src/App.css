@@ -62,6 +62,32 @@
   padding-bottom: 4em;
 }
 
+.btn-pers {
+  background-color: #4d4949;
+}
+
+.freccia {
+  top: 45px;
+  right: 25px;
+  color: white;
+}
+
+.noround {
+  border-radius: 0;
+}
+
+.edit {
+  bottom: 5px;
+  left: 20px;
+  padding: 2PX 5PX;
+  box-shadow: 2px 2px 1px 1px #878383;
+}
+
+.profile {
+  height: 100px;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,25 +1,36 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import '../node_modules/bootstrap/dist/js/bootstrap.js'
-import MyNavbar from './components/MyNavbar';
-import MyFooter from './components/MyFooter';
-import { Container } from 'react-bootstrap';
-import TvShows from './components/TvShows.jsx';
-import Saga from './components/Saga.jsx';
+import "../node_modules/bootstrap/dist/js/bootstrap.js";
+import MyNavbar from "./components/MyNavbar";
+import MyFooter from "./components/MyFooter";
+import { Container } from "react-bootstrap";
+import TvShows from "./components/TvShows.jsx";
+import Saga from "./components/Saga.jsx";
+import Settings from "./components/Settings.jsx";
+import ProfileSettings from "./components/ProfileSettings.jsx";
 
 function App() {
   return (
-   <>
-   <MyNavbar/>
-   <Container fluid className='bg-black text-light'>
-    <TvShows/>
-    <Saga saga={'Harry Potter'} />
-    <Saga saga={'Deadpool'} />
-    <Saga saga={'Star wars'} />
-   </Container>
-   <MyFooter/>
-   </>
+    <>
+      <header>
+        <MyNavbar />
+      </header>
+      <main>
+        <Container fluid className="bg-dark text-light">
+          <TvShows />
+          <Saga saga={"Harry potter"} />
+          <Saga saga={"Shrek"} />
+          <Saga saga={"Lord of ring"} />
+          <Saga saga={"Fantastic Beasts"} />
+          <Saga saga={"Twilight"} />
+        </Container> 
+        {/*<ProfileSettings/>*/}
+      </main>
+      <footer>
+        <MyFooter />
+      </footer>
+    </>
   );
 }
 

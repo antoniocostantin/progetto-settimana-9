@@ -1,10 +1,12 @@
 import { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Spinner, Alert, Col } from "react-bootstrap";
+import Film from "./Film";
 
 class Saga extends Component {
   state = {
     films: [],
     isLoading: true,
+    isWrong: false,
   };
 
   componentDidMount = () => {
@@ -17,18 +19,41 @@ class Saga extends Component {
         if (response.ok) {
           return response.json();
         } else {
+          this.setState({
+            ...this.state,
+
+            isLoading: false,
+            isWrong: true,
+          });
           throw new Error("La chiamata non è andata a buon fine");
         }
       })
       .then((search) => {
-        console.log("FILM RECUPERATE DAL SERVER", search);
-        this.setState({
-          films: search.Search,
-          isLoading: false,
-        });
+        if (search.Error) {
+          this.setState({
+            ...this.state,
+
+            films: [],
+            isWrong: true,
+          });
+        } else {
+          console.log("FILM RECUPERATE DAL SERVER", search);
+          this.setState({
+            ...this.state,
+
+            films: search.Search,
+            isWrong: false,
+            isLoading: false,
+          });
+        }
       })
       .catch((err) => {
         console.log("ERRORE NEL RECUPERO DATI (internet)?", err);
+        this.setState({
+          ...this.state,
+
+          isWrong: true,
+        });
       });
   };
 
@@ -36,19 +61,32 @@ class Saga extends Component {
     return (
       <>
         <h4 className="mb-4">{this.props.saga}</h4>
-        <Row className="row-cols-2 row-cols-sm-3 row-cols-lg-6 g-4">
-          {this.state.films.map((film, i) => {
-            if(i < 4){
-            return (
-              <>
-                <Col key={film.imdbID} className="mx-5 my-3" >
-                  <img src={film.Poster} />
-                  <p className="text-center mt-2">{film.Title}</p>
+        {this.state.isWrong ? (
+          <Alert variant="danger">
+            {" "}
+            <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+            <p>Something went wrong</p>
+          </Alert>
+        ) : (
+          <>
+            <Row className="row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4">
+              {this.state.isLoading && (
+                <Col>
+                  <Spinner animation="border" variant="danger" />
                 </Col>
-              </>
-            )};
-          })}
-        </Row>
+              )}
+              {this.state.films.map((film, i) => {
+                if (i < 4) {
+                  return (
+                    <>
+                      <Film film={film} />
+                    </>
+                  );
+                }
+              })}
+            </Row>
+          </>
+        )}
       </>
     );
   }

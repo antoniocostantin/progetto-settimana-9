@@ -3,7 +3,7 @@ import { Component } from "react";
 class MyFooter extends Component{
     render(){
         return(
-            <footer className="bg-black py-2">
+            <footer className="bg-dark py-2">
             <div className="row justify-content-center mt-5">
               <div className="col col-6">
                 <div className="row">
