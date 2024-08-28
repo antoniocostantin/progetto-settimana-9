@@ -28,6 +28,7 @@ class Search extends Component {
                   onChange={(e) => {
                     this.setState({
                       search: e.target.value,
+                      start: false,
                     });
                     if (e.target.value === ''){
                         this.setState({start: false,})

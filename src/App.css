@@ -99,6 +99,10 @@
   }
 }
 
+.clickable{
+  cursor: pointer;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -121,4 +125,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#root main {
+  flex-grow: 1;
 }

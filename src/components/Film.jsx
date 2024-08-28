@@ -1,15 +1,19 @@
-import { Component } from "react";
 import { Col} from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
-class Film extends Component{
-    render(){
+function Film ({ film}){
+    const navigate = useNavigate()
+
+
         return(
-            <Col key={this.props.film.imdbID} className="mx-5 my-3" >
-                  <img src={this.props.film.Poster} />
-                  <p className="text-center mt-2">{this.props.film.Title}</p>
+            <Col key={film.imdbID} className="mx-5 my-3" onClick={() => {
+                navigate('/details/' + film.imdbID)
+              }} >
+                  <img src={film.Poster} />
+                  <p className="text-center mt-2">{film.Title}</p>
                 </Col>
         )
-    }
+    
 }
 
 export default Film

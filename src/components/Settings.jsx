@@ -11,7 +11,7 @@ class Settings extends Component {
           <Row>
             <Col
               xs={12}
-              className="border border-1 border-dark border-top-0 border-start-0 border-end-0 mb-3"
+              className="border bg-white border-1 border-dark border-top-0 border-start-0 border-end-0 mb-3"
             >
               <p className="fs-2">Account</p>
             </Col>
