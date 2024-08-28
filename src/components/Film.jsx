@@ -9,7 +9,7 @@ function Film ({ film}){
             <Col key={film.imdbID} className="mx-5 my-3" onClick={() => {
                 navigate('/details/' + film.imdbID)
               }} >
-                  <img src={film.Poster} />
+                  <img src={film.Poster} className='clickable' />
                   <p className="text-center mt-2">{film.Title}</p>
                 </Col>
         )

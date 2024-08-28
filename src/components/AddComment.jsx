@@ -53,10 +53,10 @@ function AddComment({ asin, changed }) {
     <div className="my-3">
       <Form onSubmit={sendComment}>
         <Form.Group className="mb-2">
-          <Form.Label>Recensione</Form.Label>
+          <Form.Label className="text-white-50 fw-bold">Recensione</Form.Label>
           <Form.Control
             type="text"
-            className="bg-body-tertiary"
+            className="bg-dark text-white-50"
             placeholder="Inserisci qui il testo"
             value={comment.comment}
             onChange={(e) => {
@@ -68,9 +68,9 @@ function AddComment({ asin, changed }) {
           />
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Label>Valutazione</Form.Label>
+          <Form.Label className="text-white-50 fw-bold">Valutazione</Form.Label>
           <Form.Control
-            className="bg-body-tertiary"
+            className="bg-dark text-white-50"
             as="select"
             value={comment.rate}
             onChange={(e) => {
@@ -87,7 +87,7 @@ function AddComment({ asin, changed }) {
             <option>5</option>
           </Form.Control>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="outline-secondary" type="submit">
           Invia
         </Button>
       </Form>

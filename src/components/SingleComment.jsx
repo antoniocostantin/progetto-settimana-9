@@ -27,16 +27,16 @@ const SingleComment = ({ comment, changed }) => {
   }
 
   return (
-    <ListGroup.Item className='bg-body-tertiary'>
+    <ListGroup.Item className='bg-dark text-white-50'>
       {comment.comment} 
       <Button
-        variant="danger"
+        variant="outline-danger"
         className="ms-2"
         onClick={() => deleteComment(comment._id)}
       >
-        Elimina
+        <i class="bi bi-trash3-fill"></i>
       </Button><br/>
-      <small className='text-secondary '>{comment.author} ----- {comment.rate}<i class="bi bi-star-fill"></i></small>
+      <p>{comment.author} ----- {comment.rate}<i class="bi bi-star-fill text-white-50 ms-2"></i></p>
     </ListGroup.Item>
   )
 }
