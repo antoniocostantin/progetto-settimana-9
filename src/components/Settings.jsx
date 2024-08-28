@@ -7,11 +7,11 @@ class Settings extends Component {
   render() {
     return (
       <>
-        <Container fluid className="py-3">
+        <Container fluid className="py-3 bg-white">
           <Row>
             <Col
               xs={12}
-              className="border bg-white border-1 border-dark border-top-0 border-start-0 border-end-0 mb-3"
+              className="border border-1 border-dark border-top-0 border-start-0 border-end-0 mb-3"
             >
               <p className="fs-2">Account</p>
             </Col>

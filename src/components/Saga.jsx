@@ -72,7 +72,7 @@ class Saga extends Component {
             <Row className="row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4">
               {this.state.isLoading && (
                 <Col>
-                  <Spinner animation="border" variant="danger" />
+                  <Spinner animation="grow" variant="danger" />
                 </Col>
               )}
               {this.state.films.map((film, i) => {
