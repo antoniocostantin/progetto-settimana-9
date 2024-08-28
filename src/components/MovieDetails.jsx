@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Container, Alert, Spinner } from "react-bootstrap";
 import { useParams} from "react-router-dom";
-
+import CommentArea from "./CommentArea";
 
 function MovieDetails() {
   const [film, setFilm] = useState({});
@@ -37,9 +37,8 @@ function MovieDetails() {
   };
 
   useEffect (() => {
-    const id = params
-    console.log(id.filmId)
-    fetchFilms(id.filmId)
+    const id = params.filmId
+    fetchFilms(id)
     console.log(film)
   }, [])
 
@@ -64,6 +63,7 @@ function MovieDetails() {
               <p>
                 {film.Plot}
               </p>
+              <CommentArea asin={params.filmId} />
             </Col>
             <Col xs={"auto"}>
               <img src={film.Poster} alt="Poster" />

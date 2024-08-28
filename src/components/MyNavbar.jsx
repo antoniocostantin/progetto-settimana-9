@@ -1,4 +1,3 @@
-import { Component } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import netflixlogo from "../assets/img/netflix_logo.png";
 import avatar from '../assets/img/avatar.png'
